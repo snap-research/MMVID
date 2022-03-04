@@ -1,0 +1,5 @@
+*.DS_Store
+*.DS_Store?
+*.pyc
+.vscode
+__pycache__
