@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Video Synthesis, Multimodal, VQGAN">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Show Me What and Tell Me How: Video Synthesis via Multimodal Conditioning</title>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://phymhan.github.io">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://bluer555.github.io/MoCoGAN-HD/">
+              MoCoGAN-HD
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Show Me What and Tell Me How: Video Synthesis via Multimodal
+              Conditioning</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://phymhan.github.io">Ligong Han</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="https://alanspike.github.io">Jian Ren</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="http://hsinyinglee.com">Hsin-Ying Lee</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://fvancesco.github.io">Francesco Barbieri</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://kyleolsz.github.io">Kyle Olszewski</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/site/shervinminaee/home">Shervin Minaee</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://people.cs.rutgers.edu/~dnm">Dimitris Metaxas</a><sup>2</sup>
+              </span>
+              <span class="author-block">
+                <a href="http://www.stulyakov.com">Sergey Tulyakov</a><sup>1</sup>
+              </span>
+            </div>
+            <h1 style="font-size:23px;font-weight:bold">CVPR 2022</h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Snap Inc.,</span>
+
+              <span class="author-block"><sup>2</sup>Rutgers University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://www.dropbox.com/s/ge8zlvd6zblnexc/mmvid_full.pdf?dl=0"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://www.dropbox.com/s/ge8zlvd6zblnexc/mmvid_full.pdf?dl=0"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/snap-research/MMVID"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Dataset Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/snap-research/MMVID"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="teaser" autoplay muted loop height="100%">
+        <source src="static/videos/main.mp4"
+                type="video/mp4">
+      </video> -->
+        <img src="static/videos/demo.gif">
+        <h2 class="subtitle has-text-centered">
+          Generated Videos on Multimodal VoxCeleb.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Most methods for conditional video synthesis use a single modality as the condition. This comes with major
+              limitations. For example, it is problematic for a model conditioned on an image to generate a specific
+              motion trajectory desired by the user since there is no means to provide motion information. Conversely,
+              language information can describe the desired motion, while not precisely defining the content of the
+              video. This work presents a multimodal video generation framework that benefits from text and images
+              provided jointly or separately. We leverage the recent progress in quantized representations for videos
+              and apply a bidirectional transformer with multiple modalities as inputs to predict a discrete video
+              representation. To improve video quality and consistency, we propose a new video token trained with
+              self-learning and an improved mask-prediction algorithm for sampling video tokens. We introduce text
+              augmentation to improve the robustness of the textual representation and diversity of generated videos.
+              Our framework can incorporate various visual modalities, such as segmentation masks, drawings, and
+              partially occluded images. It can generate much longer sequences than the one used for training. In
+              addition, our model can extract visual information as suggested by the text prompt, <em>e.g.</em>, "an
+              object in image one is moving northeast", and generate corresponding videos. We run evaluations on three
+              public datasets and a newly collected dataset labeled with facial attributes, achieving state-of-the-art
+              generation results on all four.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered">
+
+        <div class="column is-full-width">
+          <!-- VoxCeleb -->
+          <h2 class="title is-3">Multimodal VoxCeleb Dataset</h2>
+
+          <!-- Text-to-Video -->
+          <h3 class="title is-4">Text-to-video generation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Example videos generated by MMVID on the Multimodal VoxCeleb dataset for text-to-video generation. We show
+              three synthesized videos for each input multimodal condition.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/vox_text-to-video.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!--/ Text-to-Video -->
+
+          <!-- Independent multimodal video generation -->
+          <h3 class="title is-4">Independent multimodal video generation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Example videos generated by MMVID on the Multimodal VoxCeleb dataset for independent multimodal video
+              generation. The input control signals are text and a segmentation mask. We show two synthesized videos for
+              each input multimodal condition.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/vox_text+mask.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              Samples generated by MMVID conditioned on text and an artistic drawing.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/vox_text+draw.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              Samples generated by MMVID conditioned on text and a partially observed image.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/vox_text+part.mp4" type="video/mp4" />
+            </video>
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/vox_occlude.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!--/ Independent multimodal video generation -->
+
+          <!-- Dependent -->
+          <h3 class="title is-4">Dependent multimodal video generation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Example videos generated by MMVID on the Multimodal VoxCeleb dataset for dependent multimodal video
+              generation. The input control signals are text, an image, and a segmentation mask. We show two synthesized
+              videos for each input multimodal condition.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/vox_image+mask.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              Samples generated by MMVID conditioned on text, an artistic drawing, and a segmentation mask.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/vox_draw+mask.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="content has-text-justified">
+            <p>
+              Samples generated by MMVID conditioned on text, an image (used for appearance), and a video (used for
+              motion guidance).
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/vox_image+video.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!--/ Dependent -->
+
+          <!-- Text augmentation -->
+          <h3 class="title is-4">Textual Augmentation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Example videos generated by methods w/ (<em>w/</em> RoBERTa) and w/o (<em>w/o</em> RoBERTa) using language
+              embedding from RoBERTa as text augmentation. Models are trained on the Multimodal VoxCeleb dataset for
+              text-to-video generation. We show three synthesized videos for each input text condition.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/vox_roberta.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!--/ Text augmentation -->
+          <!--/ VoxCeleb -->
+
+          <br></br>
+          <!-- Shapes -->
+          <h2 class="title is-3">Moving Shapes Dataset</h2>
+
+          <!-- Text-to-Video -->
+          <h3 class="title is-4">Text-to-video generation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Samples generated by our approach on the Moving Shapes dataset for text-to-video generation. We show three
+              synthesized videos for each input text condition.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/shape_text-to-video.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!--/ Text-to-Video -->
+
+          <!-- Independent -->
+          <h3 class="title is-4">Independent multimodal video generation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Samples generated by our approach on the Shapes dataset for independent multimodal generation. The input
+              control signals are text and a partially observed image (with the center masked out, shown in white
+              color). We show two synthesized videos for each input multimodal condition.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/shape_text+ic.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!--/ Independent -->
+
+          <!-- Dependent -->
+          <h3 class="title is-4">Dependent multimodal video generation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Samples generated by our approach on the Shapes dataset for dependent multimodal generation. The input
+              control signals are text and images. We show one synthesized video for each input multimodal condition.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/shape_depend.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!--/ Dependent -->
+          <!--/ Shapes -->
+
+          <br></br>
+          <!-- iPER -->
+          <h2 class="title is-3">iPER Dataset</h2>
+
+          <!-- Long -->
+          <h3 class="title is-4">Long sequence generation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Example videos generated by our approach on the iPER dataset for long sequence generation. The
+              extrapolation process is repeated for each sequence 100 times, resulting in a 107-frame video. The textual
+              input also controls the speed, where "slow" indicates videos with slow speed such that the motion is slow,
+              while "fast" indicates the performed motion is fast. We show one synthesized video for each input text
+              condition. The first video following the text input corresponds to the "slow" condition, the second
+              corresponds to the "normal", and the last corresponds to the "fast".
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/iper_long.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!--/ Long -->
+
+          <!-- Interp -->
+          <h3 class="title is-4">Temporal Interpolation</h3>
+          <div class="content has-text-justified">
+            <p>
+              Example videos of our approach for video interpolation on iPER dataset.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <video class="video-fluid w-100" controls autoplay loop muted>
+              <source src="static/videos/iper_interp.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <!--/ Interp -->
+
+          <br></br>
+          <!-- Supp -->
+          <h2 class="title is-3">Supplemental Materials</h2>
+          <div class="content has-text-justified">
+            <p>
+              More supplemental videos can be found at this <a
+                href="https://phymhan.github.io/sites/mmvid_supp/">webpage</a>.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{han2022mmvid,
+  author    = {Han, Ligong and Ren, Jian and Lee, Hsin-Ying and Barbieri, Francesco and Olszewski, Kyle and Minaee, Shervin and Metaxas, Dimitris and Tulyakov, Sergey},
+  title     = {Show Me What and Tell Me How: Video Synthesis via Multimodal Conditioning},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year      = {2022},
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div align="center" class="container">
+      <div class="columns is-centered">
+        <div class="content">
+          This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
