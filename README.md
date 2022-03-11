@@ -23,11 +23,11 @@ This repo will contain the code for training and testing, models, and data for M
 ## Citation
 
 If our code, data, or models help your work, please cite our paper:
-```
-@inproceedings{han2022mmvid,
-    title={Show Me What and Tell Me How: Video Synthesis via Multimodal Conditioning},
-    author={Ligong Han and Jian Ren and Hsin-Ying Lee and Francesco Barbieri and Kyle Olszewski and Shervin Minaee and Dimitris Metaxas and Sergey Tulyakov},
-    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-    year={2022}
+```BibTeX
+@article{han2022show,
+  title={Show Me What and Tell Me How: Video Synthesis via Multimodal Conditioning},
+  author={Han, Ligong and Ren, Jian and Lee, Hsin-Ying and Barbieri, Francesco and Olszewski, Kyle and Minaee, Shervin and Metaxas, Dimitris and Tulyakov, Sergey},
+  journal={arXiv preprint arXiv:2203.02573},
+  year={2022}
 }
 ```
