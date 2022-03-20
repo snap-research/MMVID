@@ -14,7 +14,7 @@
 
 This repo will contain the code for training and testing, models, and data for MMVID (coming soon).
 
-> [**Show Me What and Tell Me How: Video Synthesis via Multimodal Conditioning**](https://xxx)<br>
+> [**Show Me What and Tell Me How: Video Synthesis via Multimodal Conditioning**](https://arxiv.org/abs/2203.02573)<br>
 > [Ligong Han](https://phymhan.github.io/), [Jian Ren](https://alanspike.github.io/), [Hsin-Ying Lee](http://hsinyinglee.com/), [Francesco Barbieri](https://fvancesco.github.io/), [Kyle Olszewski](https://kyleolsz.github.io/), [Shervin Minaee](https://sites.google.com/site/shervinminaee/home), [Dimitris Metaxas](https://people.cs.rutgers.edu/~dnm/), [Sergey Tulyakov](http://www.stulyakov.com/)<br>
 > Snap Inc., Rutgers University<br>
 > CVPR 2022
