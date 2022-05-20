@@ -1,0 +1,12 @@
+progressbar2
+axial_positional_embedding
+einops
+omegaconf==2.0.0
+g-mlp-pytorch
+transformers
+ftfy
+natsort
+dominate
+deepspeed
+decord
+tensorflow-gan==2.1.0

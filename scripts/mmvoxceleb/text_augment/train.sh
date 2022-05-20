@@ -1,0 +1,11 @@
+python3 train.py --name train_vox_text_roberta \
+    --image_text_folder data/mmvoxceleb \
+    --dataset video_text --batch_size 24 \
+    --text_seq_len 50 \
+    --use_html --log_every 200 --sample_every 5000 \
+    --n_sample 4 --n_per_sample 4 --num_visuals 0 \
+    --num_targets 8 --frame_num 8 --frame_step 4 \
+    --dropout_vc 0.4 --dist_url tcp://localhost:10001 \
+    --vae_path pretrained_models/vae_vox.ckpt --rel_no_fully_masked \
+    --mask_predict_steps 10 20 30 --mask_predict_steps1 20 \
+    --fixed_language_model roberta-large
