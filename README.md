@@ -166,12 +166,12 @@ The authors thank everyone who makes their code and models available.
 
 ## Citation
 
-If our code, data, or models help your work, please cite our paper:
+If our code, data, or models help your work, please cite our [paper](https://arxiv.org/abs/2203.02573):
 ```BibTeX
-@article{han2022show,
-  title={Show Me What and Tell Me How: Video Synthesis via Multimodal Conditioning},
-  author={Han, Ligong and Ren, Jian and Lee, Hsin-Ying and Barbieri, Francesco and Olszewski, Kyle and Minaee, Shervin and Metaxas, Dimitris and Tulyakov, Sergey},
-  journal={arXiv preprint arXiv:2203.02573},
-  year={2022}
+@inproceedings{han2022show,
+title={Show Me What and Tell Me How: Video Synthesis via Multimodal Conditioning},
+author={Han, Ligong and Ren, Jian and Lee, Hsin-Ying and Barbieri, Francesco and Olszewski, Kyle and Minaee, Shervin and Metaxas, Dimitris and Tulyakov, Sergey},
+booktitle={CVPR},
+year={2022}
 }
 ```
